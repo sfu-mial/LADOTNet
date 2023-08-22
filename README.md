@@ -1,5 +1,5 @@
-# LADOTNet# Limited-Angle Diffuse Optical Tomography Image Reconstruction using Deep Learning
-This is the software repository "DOTNet" for [our](https://link.springer.com/chapter/10.1007/978-3-030-32239-7_8) [paper](#cite) s addresses the problem of reconstructing breast cancer lesions in acquired diffuse optical tomography data by leveraging cross-domain learning.
+## Limited-Angle Diffuse Optical Tomography Image Reconstruction using Deep Learning
+This is the software repository "LADOTNet" for [our](https://link.springer.com/chapter/10.1007/978-3-030-32239-7_8) [paper](#cite) s addresses the problem of reconstructing breast cancer lesions in acquired diffuse optical tomography data by leveraging cross-domain learning.
 
 ## Motivation
 Diffuse optical tomography (DOT) leverages near-infrared light propagation through in vivo tissue to assess its optical properties and identify abnormalities such as cancerous lesions. While this relatively new optical imaging modality is cost-effective and non-invasive,
@@ -42,10 +42,10 @@ Diffuse optical tomography,inverse problem, image reconstruction, deep learning,
 <a name="install"></a>
 
 ```bash
-git clone https://github.com/haneneby/DOTNet.git  
-cd DOTNet
-conda env create -f requirement.yml --name DOTNet
-conda activate DOTNet
+git clone https://github.com/haneneby/LADOTNet.git  
+cd LADOTNet
+conda env create -f requirement.yml --name LADOTNet
+conda activate LADOTNet
 ```
 ### Training
 
@@ -53,8 +53,8 @@ conda activate DOTNet
 ```bash
 export CUDA_VISIBLE_DEVICES=0 #or change to your GPU config
 mkdir myoutput
-cd DOTNet
-python3 DOTNet.py --epochs 100 --outputfolder ../myoutput.      
+cd LADOTNet
+python3 LADOTNet.py --epochs 100 --outputfolder ../myoutput.      
 
 ```
 This will show something like:
@@ -73,11 +73,11 @@ To train the TL module run the following command:
 <a name="Evaluation"></a>
 ```bash
 mkdir myoutput
-cd DOTNet
+cd LADOTNet
 python3 TL.py  --input testdatadir --outputfolder ../myoutput 
 ```
 
 The results will be saved output in `myoutput`. 
 ### Questions?
 <a name="faq"></a>
-Please create a [new issue](https://github.com/haneneby/DOTNet/issues/new/choose) detailing concisely, yet complete what issue you encountered, in a reproducible way.
+Please create a [new issue](https://github.com/haneneby/LADOTNet/issues/new/choose) detailing concisely, yet complete what issue you encountered, in a reproducible way.
