@@ -77,7 +77,7 @@ cd LADOTNet
 python3 TL.py  
 ```
 
-The results will be saved output in `myoutput`. 
+The results will be saved output in `TLoutput`. 
 ### Questions?
 <a name="faq"></a>
 Please create a [new issue](https://github.com/haneneby/LADOTNet/issues/new/choose) detailing concisely, yet complete what issue you encountered, in a reproducible way.

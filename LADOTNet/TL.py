@@ -210,6 +210,7 @@ y_test = (y_test_i[:,128:256]/y_test_i[:,128:256].max())
 
 
 
+
 keras.callbacks.Callback()
 
 #early_stopping= keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience=500, verbose=0, mode='auto')
@@ -224,7 +225,7 @@ history =model.fit(x_train,y_train,
                 validation_split=0.1,
                 callbacks=[MyCallback(alpha, beta)]
                    )
-model.save('./TL_results/TL-MMD_L/TL.h5')
+model.save('./TLoutput/TL-MMD_L/TL.h5')
 import timeit
 
 #beg_ts = time.time()
@@ -246,7 +247,7 @@ for i in range (0,len(y_test)):
 	 plt.plot((decoded_imgs_test[i]).T,'g')
 	 labels = ["GT", "Result"]
 	 plt.legend(labels, loc=(1, 0))
-	 plt.savefig('./TL_results/TL-MMD_L/result_imag '+ str(i)+'.png', bbox_inches=None)
+	 plt.savefig('./TLoutput/TL-MMD_L/result_imag '+ str(i)+'.png', bbox_inches=None)
 	 # # tes = y_test[i]
 	 # # im = plt.imshow(tes.reshape(128, 128))
     #  # # cbar= plt.colorbar(im,orientation='vertical')
@@ -261,7 +262,7 @@ for i in range (0,len(y_train)):
 	 plt.plot((decoded_imgs[i]).T,'g')
 	 labels = ["GT", "Result"]
 	 plt.legend(labels, loc=(1, 0))
-	 plt.savefig('./TL_results/TL-MMD_L/result_train_imag '+ str(i)+'.png', bbox_inches=None)
+	 plt.savefig('./TLoutput/TL-MMD_L/result_train_imag '+ str(i)+'.png', bbox_inches=None)
 	 # # tes = y_test[i]
 	 # # im = plt.imshow(tes.reshape(128, 128))
     #  # # cbar= plt.colorbar(im,orientation='vertical')
@@ -278,7 +279,7 @@ plt.plot(y_all.T, '-g')
 # plt.plot(decoded.T, '-y')
 labels=[ "g-synth","m- real"]
 plt.legend( labels, loc=(1,0))
-plt.savefig('./TL_results/TL-MMD_L/result_all.png', bbox_inches=None)
+plt.savefig('./TLoutput/TL-MMD_L/result_all.png', bbox_inches=None)
 plt.close('all')
 
 
@@ -291,6 +292,6 @@ plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
-plt.savefig("./TL_results/TL-MMD_L/model loss.png", bbox_inches='tight')
+plt.savefig("./TLoutput/TL-MMD_L/model loss.png", bbox_inches='tight')
 plt.close("all")
 
