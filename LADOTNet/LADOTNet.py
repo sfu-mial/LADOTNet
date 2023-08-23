@@ -129,7 +129,7 @@ def train(epochs, batch_size, alpha,beta,dir):
                                     epsilon=1e-9)
     )
     history =model.fit(measure_1, x_train, epochs=epochs, batch_size=batch_size, shuffle=True,
-    validation_split=0.2, callbacks = [plot_losses,checkpoint,LearningRateReducerCb(),reduce_lr])
+    validation_split=0.2, callbacks = [plot_losses,checkpoint,LearningRateReducerCb(),reduce_lr,MyCallback(alpha,lgr)])
     Im_pred_1 = model.predict(testmeasure_1)
 
     plot_generated_images(dir, Im_pred_1, x_test, True)
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     outputfolder=  conf['outputdirectory']
     if mode == 'train':
         measure_1,x_train, testmeasure_1,x_test =load_data(dataset_dir)
-        train(epochs,batchsize, alpha,outputfolder)
+        train(epochs,batchsize, alpha,outputfolder,outputfolder)
     elif mode == 'test':
         testmeasure_1, x_test =load_data_t(dataset_dir)
         test(testmeasure_1,x_test ,outputfolder)

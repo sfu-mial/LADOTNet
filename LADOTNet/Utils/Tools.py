@@ -17,7 +17,7 @@ def initlogger(configuration):
     if lgr is None:
         lgr = logging.getLogger('global')
     if 'logdir' in configuration:
-        fh = logging.FileHandler(os.path.join(configuration['logdir'], 'MultiNet.log'))
+        fh = logging.FileHandler(os.path.join(configuration['logdir'], 'LADOTNet.log'))
         fh.setLevel(logging.INFO)
         formatter = logging.Formatter("[%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s")
         fh.setFormatter(formatter)
@@ -67,9 +67,8 @@ class PlotLosses(keras.callbacks.Callback):
 plot_losses = PlotLosses()
 
 class MyCallback(keras.callbacks.Callback):
-    def __init__(self, alpha, beta):
+    def __init__(self, alpha,lgr):
         self.alpha = alpha
-        self.beta = beta
     # customize your behavior
     def on_epoch_end(self, epoch, logs={}):
         if epoch >10 and K.get_value(self.alpha)<0.4:
@@ -79,7 +78,7 @@ class MyCallback(keras.callbacks.Callback):
                  K.set_value(self.alpha, K.get_value(self.alpha) +0.001)
 # #            K.set_value(self.alpha, max(0.75, K.get_value(self.alpha) -0.0001))
 # #                  K.set_value(self.beta,  min(0.7, K.get_value(self.beta) -0.0001))
-        logger.info("epoch %s, alpha = %s, beta = %s" % (epoch, K.get_value(self.alpha), K.get_value(self.beta)))
+        lgr.info("epoch %s, alpha = %s" % (epoch, K.get_value(self.alpha)))
 
 
 class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
