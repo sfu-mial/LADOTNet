@@ -35,7 +35,7 @@ Diffuse optical tomography,inverse problem, image reconstruction, deep learning,
 ### Contribution
 <a name="contribution"></a>
 - We investigate the benefits of end-to-end deep learning on the quality of limited-data acquisition DOT reconstruction.
-- We introduce a similarity-wise loss that focuses on lesion-specific information and small reconstruction details to reduce reconstruction loss and improve lesion localization accuracy.
+- We introduce a similarity-wise loss, based Fuzzy Jaccard, that focuses on lesion-specific information and small reconstruction details to reduce reconstruction loss and improve lesion localization accuracy.
 - To bridge the gap between real-world acquisition and in silico data simulation, we employ transfer learning. We assess the model's ability to generalize to unseen data, accounting for sensor non-idealities and noise.
 
 ### Installation
