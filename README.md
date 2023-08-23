@@ -72,9 +72,9 @@ To train the TL module run the following command:
 
 <a name="Evaluation"></a>
 ```bash
-mkdir myoutput
+mkdir TLoutput
 cd LADOTNet
-python3 TL.py  --input testdatadir --outputfolder ../myoutput 
+python3 TL.py  
 ```
 
 The results will be saved output in `myoutput`. 
