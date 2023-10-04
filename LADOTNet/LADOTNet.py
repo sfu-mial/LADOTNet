@@ -63,7 +63,7 @@ if not os.path.exists(final_directory):
 
 def initializer(name=None,logs={}):
         global lgr
-        configuration = {'epochs':25, 'lr':0.0001, 'seed':2, 'device':'gpu', 'batchsize':64, 'alpha':0.1, 
+        configuration = {'epochs':25, 'lr':0.0001, 'seed':2, 'device':'gpu', 'batchsize':64, 'alpha':0.25, 
                   'checkpoint': None, 'datasetdirectory':'./data/data_samples/MS1/', 'outputfolder': "results", 'checkpointdirectory':'.', 'mode':'train'}
 
         
